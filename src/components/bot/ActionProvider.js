@@ -1,5 +1,4 @@
 // ActionProvider.jsx
-// eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import { createClientMessage } from "react-chatbot-kit";
 import { useNavigate } from "react-router-dom";
@@ -69,7 +68,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   const handleAgeSubmission = (age) => {
     const updatedStudentData = { ...studentData, age };
     const message = createChatBotMessage(
-      "Thank you. In 5 seconds, bot will exit",
+      `Thank you. In ${countdown} seconds, bot will exit`,
       { widget: "countdown" }
     );
     setState((prevState) => ({
